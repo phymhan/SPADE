@@ -5,7 +5,7 @@ Licensed under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses
 
 from models.networks.sync_batchnorm import DataParallelWithCallback
 from models.pix2pix_model import Pix2PixModel
-
+import pdb
 
 class Pix2PixTrainer():
     """
@@ -42,6 +42,7 @@ class Pix2PixTrainer():
     def run_discriminator_one_step(self, data):
         self.optimizer_D.zero_grad()
         d_losses = self.pix2pix_model(data, mode='discriminator')
+        pdb.set_trace()
         d_loss = sum(d_losses.values()).mean()
         d_loss.backward()
         self.optimizer_D.step()

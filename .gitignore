@@ -1,6 +1,7 @@
 checkpoints/
 results/
 .idea/
+.vscode
 *.tar.gz
 *.zip
 *.pkl

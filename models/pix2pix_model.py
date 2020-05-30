@@ -6,7 +6,7 @@ Licensed under the CC BY-NC-SA 4.0 license (https://creativecommons.org/licenses
 import torch
 import models.networks as networks
 import util.util as util
-
+import pdb
 
 class Pix2PixModel(torch.nn.Module):
     @staticmethod
@@ -168,7 +168,7 @@ class Pix2PixModel(torch.nn.Module):
             fake_image, _ = self.generate_fake(input_semantics, real_image)
             fake_image = fake_image.detach()
             fake_image.requires_grad_()
-
+        pdb.set_trace()
         pred_fake, pred_real = self.discriminate(
             input_semantics, fake_image, real_image)
 
